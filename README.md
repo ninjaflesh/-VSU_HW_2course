@@ -1,1 +1,1 @@
-# -VSU_HW_2course
+# VSU_HW_2course
