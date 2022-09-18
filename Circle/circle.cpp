@@ -6,8 +6,14 @@ using namespace std;
 void circle::get() {
 	cout << "Введите коордитнаты центра окружности (x, y): ";
 	cin >> x >> y;
-	cout << "Введите радиус акружности: ";
-	cin >> r;
+	
+	bool f = true;
+	while (f) {
+		cout << "Введите радиус окружности: ";
+		cin >> r;
+
+		if (r >= 1) f = false;
+	}
 	cout << endl;
 }
 void circle::show() {
