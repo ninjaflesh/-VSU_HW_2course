@@ -10,8 +10,7 @@ int main() {
 	a.get();
 	a.show();
 	b.show();
-	circle c(b);
-	b.show();
+	cout << a.circle_equal(b) << endl;
 
 	return 0;
 }
