@@ -8,6 +8,7 @@ class circle
 public:
 	void get();
 	void show();
+	bool circle_equal(circle);
 	circle();
 	circle(double, double, double);
 	circle(const circle&);
@@ -15,4 +16,5 @@ public:
 
 private:
 	double x, y, r;
+
 };
