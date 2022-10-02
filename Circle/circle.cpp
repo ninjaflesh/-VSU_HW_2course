@@ -30,6 +30,12 @@ void circle::show() {
 
 	cout << pow(r, 2) << endl;
 }
+bool circle::circle_equal(circle x) {
+	if (r == x.r)
+		return true;
+	else
+		return false;
+}
 circle::circle() {}
 circle::circle(const circle& a) :x(a.x), y(a.y), r(a.r) {}
 circle::circle(double a, double b, double c) : x(a), y(b), r(c) {}
