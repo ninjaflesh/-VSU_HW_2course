@@ -30,12 +30,17 @@ void circle::show() {
 
 	cout << pow(r, 2) << endl;
 }
-bool circle::circle_equal(circle x) {
+bool circle::operator==(circle x) {
 	if (r == x.r)
 		return true;
 	else
 		return false;
 }
+double circle_area(circle x) {
+	const double pi = 3.1415926535;
+	return pi * (pow(x.r, 2));
+}
+
 circle::circle() {}
 circle::circle(const circle& a) :x(a.x), y(a.y), r(a.r) {}
 circle::circle(double a, double b, double c) : x(a), y(b), r(c) {}
