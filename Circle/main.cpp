@@ -10,7 +10,8 @@ int main() {
 	a.get();
 	a.show();
 	b.show();
-	cout << a.circle_equal(b) << endl;
+	cout << (a == b) << endl;
+	cout << "Площадь окружности: " << circle_area(a) << endl;
 
 	return 0;
 }
