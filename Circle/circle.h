@@ -8,6 +8,8 @@ public:
 	void get();
 	void show();
 	bool operator==(circle);
+	friend ostream& operator<<(ostream&, const circle);
+	friend istream& operator>>(istream&, circle&);
 	friend double circle_area(circle x);
 
 	circle();
