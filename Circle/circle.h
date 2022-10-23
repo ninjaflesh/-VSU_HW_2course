@@ -17,6 +17,6 @@ public:
 	circle(const circle&);
 	~circle();
 
-private:
+protected:
 	double x, y, r;
 };
