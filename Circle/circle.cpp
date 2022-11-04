@@ -68,7 +68,6 @@ istream& operator>>(istream& in, circle& a) {
 
 		if (a.r > 0) f = false;
 	}
-	cout << endl;
 	return in;
 }
 circle circle::operator++(int a) {
