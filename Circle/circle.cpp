@@ -60,10 +60,44 @@ ostream& operator<<(ostream& out, const circle a) {
 	return out;
 }
 istream& operator>>(istream& in, circle& a) {
-	in >> a.x >> a.y >> a.r;
+	in >> a.x >> a.y;
 
-	if (a.r > 0) return in;
-	else in >> a.r;
+	bool f = true;
+	while (f) {
+		in >> a.r;
+
+		if (a.r > 0) f = false;
+	}
+	cout << endl;
+	return in;
+}
+circle circle::operator++(int a) {
+	r++;
+	return *this;
+}
+circle circle::operator--(int a) {
+	r--;
+	return *this;
+}
+bool operator>(circle a, circle b) {
+	double a1 = circle_area(a);
+	double a2 = circle_area(b);
+
+	if (a1 > a2) return true;
+	else return false;
+}
+bool operator<(circle a, circle b) {
+	double a1 = circle_area(a);
+	double a2 = circle_area(b);
+
+	if (a1 < a2) return true;
+	else return false;
+}
+circle& circle::operator=(const circle& a) {
+	x = a.x;
+	y = a.y;
+	r = a.r;
+	return *this;
 }
 
 circle::circle() {}
