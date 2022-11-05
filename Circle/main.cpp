@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 #include "D:\cpp\Circle\Circle\circle.h"
-#include "D:\cpp\Circle\Circle\angem_circle.h"
+#include "D:\cpp\Circle\Circle\sphere.h"
 
 using namespace std;
 
@@ -35,11 +35,9 @@ int main() {
 	//}
 	//f.close();
 
-	angem_circle a, b(1, 4, -3, 5), c(b);
-	a.get();
-	a.show();
-	b.show();
-	c.show();
+	sphere c(1, 1, 2, 5);
+	cout << c.surface_area() << endl;
+	cout << c.sphere_volume();
 
 	return 0;
 }
