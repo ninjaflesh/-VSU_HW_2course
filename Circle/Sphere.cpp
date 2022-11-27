@@ -1,6 +1,8 @@
-#include "sphere.h"
+#include "Sphere.h"
 
-void sphere::get() {
+double PI = 3.1415926535;
+
+void Sphere::get() {
 	cout << "Введите коордитнаты центра окружности (x, y, z): ";
 	cin >> x >> y >> z;
 
@@ -13,7 +15,7 @@ void sphere::get() {
 	}
 	cout << endl;
 }
-void sphere::show() {
+void Sphere::show() {
 	if (x < 0)
 		cout << "(x+" << abs(x) << ")^2 + ";
 	else if (x == 0)
@@ -37,21 +39,18 @@ void sphere::show() {
 
 	cout << pow(r, 2) << endl;
 }
-sphere& sphere::operator=(const sphere& a) {
-	(circle)*this = a;
+Sphere& Sphere::operator=(const Sphere& a) {
+	(Circle&)*this = a;
 	z = a.z;
 	return *this;
 }
-double sphere::sphere_volume() {
-	double pi = 3.14159265;
-	return (4.0 / 3.0) * pi * pow(r, 3);
+double Sphere::sphereVolume() {
+	return (4.0 / 3.0) * PI * pow(r, 3);
 }
-double sphere::surface_area() {
-	double pi = 3.14159265;
-	return (4.0 * pi * pow(r, 2));
+double Sphere::surfaceArea() {
+	return (4.0 * PI * pow(r, 2));
 }
-
-ostream& operator<<(ostream& out, const sphere a) {
+ostream& operator<<(ostream& out, const Sphere a) {
 	if (a.x < 0)
 		cout << "(x+" << abs(a.x) << ")^2 + ";
 	else if (a.x == 0)
@@ -76,28 +75,21 @@ ostream& operator<<(ostream& out, const sphere a) {
 	cout << pow(a.r, 2) << endl;
 	return out;
 }
-istream& operator>>(istream& in, sphere& a) {
-	in >> a.x >> a.y >> a.z;
-
-	bool f = true;
-	while (f) {
-		in >> a.r;
-
-		if (a.r > 0) f = false;
-	}
+istream& operator>>(istream& in, Sphere& a) {
+	in >> a.x >> a.y >> a.z >> a.r;
+	if (a.r <= 0) { throw Circle::InputError("r <= 0", a.r); }
 	return in;
 }
-
-bool operator>(sphere a, sphere b) {
-	if ((circle)a > (circle)b) return true;
-	else return false;
+bool operator>(Sphere a, Sphere b) {
+	return (Circle)a > (Circle)b;
 }
-bool operator<(sphere a, sphere b) {
-	if ((circle)a < (circle)b) return true;
-	else return false;
+bool operator<(Sphere a, Sphere b) {
+	return (Circle)a > (Circle)b;
 }
 
-sphere::sphere() {}
-sphere::sphere(double a, double b, double c, double d) :circle(a, b, d), z(c) {}
-sphere::sphere(const sphere& a) :z(a.z), circle(a) {}
-sphere::~sphere() {}
+Sphere::Sphere() : z(0), Circle() {}
+Sphere::Sphere(double a, double b, double c, double d) :Circle(a, b, d), z(c) {
+	if (r <= 0) { throw InputError("r <= 0", r); }
+}
+Sphere::Sphere(const Sphere& a) :z(a.z), Circle(a) {}
+Sphere::~Sphere() {}
