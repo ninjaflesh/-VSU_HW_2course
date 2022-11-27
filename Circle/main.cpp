@@ -1,8 +1,10 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "D:\cpp\Circle\Circle\circle.h"
-#include "D:\cpp\Circle\Circle\sphere.h"
+
+#include"Base.h"
+#include "Circle.h"
+#include "Sphere.h"
 
 using namespace std;
 
@@ -35,9 +37,14 @@ int main() {
 	//}
 	//f.close();
 
-	sphere c(1, 1, 2, 5);
-	cout << c.surface_area() << endl;
-	cout << c.sphere_volume();
+	try {
+		Circle a(0, 0, 2), b(0, 1, 5);
+		a.arrangementCircles(b);
+		Sphere c(4, 5, 1, 0);
+	}
+	catch (Circle::InputError e) {
+		cout << e.name << " " << e.value << endl;
+	}
 
 	return 0;
 }
