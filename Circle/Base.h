@@ -5,6 +5,5 @@ using namespace std;
 
 class Base {
 public:
-	virtual void get() {};
-	virtual void show() {};
+	virtual double getSquare() = 0;
 };
