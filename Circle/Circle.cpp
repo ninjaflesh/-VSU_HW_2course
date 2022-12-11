@@ -56,8 +56,11 @@ bool Circle::operator==(Circle a) {
 	else
 		return false;
 }
-double  Circle::circleArea() {
+double Circle::getSquare() {
 	return P * (pow(r, 2));
+}
+double Circle::getPerimeter() {
+	return 2 * P * r;
 }
 ostream& operator<<(ostream& out, const Circle a) {
 	if (a.x < 0)
@@ -92,10 +95,10 @@ Circle Circle::operator--(int a) {
 	return *this;
 }
 bool operator>(Circle a, Circle b) {
-	return a.circleArea() > b.circleArea();
+	return a.getSquare() > b.getSquare();
 }
 bool operator<(Circle a, Circle b) {
-	return a.circleArea() < b.circleArea();
+	return a.getSquare() < b.getSquare();
 }
 Circle& Circle::operator=(const Circle& a) {
 	x = a.x;
