@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 
-#include"Base.h"
+#include "Base.h"
 #include "Circle.h"
 #include "Sphere.h"
 
@@ -38,9 +38,14 @@ int main() {
 	//f.close();
 
 	try {
-		Circle a(0, 0, 2), b(0, 1, 5);
+		Circle a(1, 2, 2.4), b(5, 1, 5.4);
+		cout << a.getPerimeter() << endl;
+		cout << b.getSquare() << endl;
 		a.arrangementCircles(b);
-		Sphere c(4, 5, 1, 0);
+		Sphere c(5, 1, 1, 0.1);
+		cout << c.getVolume() << endl;
+		cout << c.getPerimeter() << endl;
+		Sphere c1(5, 1, 1, 0);
 	}
 	catch (Circle::InputError e) {
 		cout << e.name << " " << e.value << endl;
