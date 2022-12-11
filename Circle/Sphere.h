@@ -6,8 +6,8 @@ public:
 	void get();
 	void show();
 	Sphere& operator=(const Sphere&);
-	double sphereVolume();
-	double surfaceArea();
+	double getVolume();
+	double getSquare();
 
 	friend ostream& operator<<(ostream&, const Sphere);
 	friend istream& operator>>(istream&, Sphere&);
@@ -18,7 +18,7 @@ public:
 	Sphere(double, double, double, double);
 	Sphere(const Sphere&);
 	~Sphere();
-
+	
 protected:
 	double z;
 };
