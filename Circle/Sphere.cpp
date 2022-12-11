@@ -44,10 +44,10 @@ Sphere& Sphere::operator=(const Sphere& a) {
 	z = a.z;
 	return *this;
 }
-double Sphere::sphereVolume() {
+double Sphere::getVolume() {
 	return (4.0 / 3.0) * PI * pow(r, 3);
 }
-double Sphere::surfaceArea() {
+double Sphere::getSquare() {
 	return (4.0 * PI * pow(r, 2));
 }
 ostream& operator<<(ostream& out, const Sphere a) {
