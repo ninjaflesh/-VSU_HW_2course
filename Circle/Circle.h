@@ -1,14 +1,14 @@
 #pragma once
-#include"Base.h"
+#include "Base.h"
 
 class Circle : public Base {
 public:
 	class InputError {
 	public:
 		string name;
-		int value;
+		double value;
 
-		InputError(string e, int v) {
+		InputError(string e, double v) {
 			name = e;
 			value = v;
 		}
@@ -17,17 +17,17 @@ public:
 	void get();
 	void show();
 	void arrangementCircles(Circle);
-	double circleArea();
-
+	double getSquare();
+	double getPerimeter();
 	Circle operator++(int);
 	Circle operator--(int);
 	Circle& operator=(const Circle&);
 	bool operator==(Circle);
 
-	friend bool operator>(Circle, Circle);
-	friend bool operator<(Circle, Circle);
 	friend ostream& operator<<(ostream&, const Circle);
 	friend istream& operator>>(istream&, Circle&);
+	friend bool operator>(Circle, Circle);
+	friend bool operator<(Circle, Circle);
 
 	Circle();
 	Circle(double, double, double);
