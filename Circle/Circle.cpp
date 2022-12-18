@@ -32,21 +32,21 @@ void Circle::show() {
 
 	cout << pow(r, 2) << endl;
 }
-void Circle::arrangementCircles(Circle b) {
-	double d = sqrt(pow((this->x - b.x), 2) + pow((this->y - b.y), 2));
-	if (this->r + b.r > d && this->r + d > b.r && b.r + d > this->r) {
+void arrangementCircles(Circle a, Circle b) {
+	double d = sqrt(pow((a.x - b.x), 2) + pow((a.y - b.y), 2));
+	if (a.r + b.r > d && a.r + d > b.r && b.r + d > a.r) {
 		cout << "Окружности перескаются." << endl;
 	}
-	if ((this->r + b.r) == d) {
+	if ((a.r + b.r) == d) {
 		cout << "Окружности касаются снаружи." << endl;
 	}
-	if (abs(this->r - b.r) == d) {
+	if (abs(a.r - b.r) == d) {
 		cout << "Окружности касаются внутри." << endl;
 	}
-	if (this->r + b.r < d) {
+	if (a.r + b.r < d) {
 		cout << "Окружности не пересекаются, вне друг друга." << endl;
 	}
-	if (this->r + d < b.r) {
+	if (a.r + d < b.r) {
 		cout << "Окружности не пересекаются, лежит внутри." << endl;
 	}
 }
