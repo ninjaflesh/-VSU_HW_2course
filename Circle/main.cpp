@@ -41,7 +41,7 @@ int main() {
 		Circle a(1, 2, 2.4), b(5, 1, 5.4);
 		cout << a.getPerimeter() << endl;
 		cout << b.getSquare() << endl;
-		a.arrangementCircles(b);
+		arrangementCircles(a, b);
 		Sphere c(5, 1, 1, 0.1);
 		cout << c.getVolume() << endl;
 		cout << c.getPerimeter() << endl;
@@ -49,6 +49,25 @@ int main() {
 	}
 	catch (Circle::InputError e) {
 		cout << e.name << " " << e.value << endl;
+	}
+
+	int n = 3;
+	Base** array = new Base * [n];
+	int a;
+	for (int i = 0; i < n; i++) {
+		cout << "0-Circle, 1-Sphere" << endl;
+		cin >> a;
+		if (a == 0) {
+			array[i] = new Circle;
+			array[i]->get();
+		}
+		if (a == 1) {
+			array[i] = new Sphere;
+			array[i]->get();
+		}
+	}
+	for (int i = 0; i < n; i++) {
+		cout << array[i]->getSquare() << endl;
 	}
 
 	return 0;
