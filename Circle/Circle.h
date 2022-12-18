@@ -16,7 +16,6 @@ public:
 
 	void get();
 	void show();
-	void arrangementCircles(Circle);
 	double getSquare();
 	double getPerimeter();
 	Circle operator++(int);
@@ -24,6 +23,7 @@ public:
 	Circle& operator=(const Circle&);
 	bool operator==(Circle);
 
+	friend void arrangementCircles(Circle, Circle);
 	friend ostream& operator<<(ostream&, const Circle);
 	friend istream& operator>>(istream&, Circle&);
 	friend bool operator>(Circle, Circle);
